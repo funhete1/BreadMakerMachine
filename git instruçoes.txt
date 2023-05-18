@@ -1,0 +1,15 @@
+copiar:
+
+git stash
+git pull
+git add *
+git commit -m "."
+git stash apply
+git add *
+git commit -m "."
+git rebase
+
+adicionar: 
+git add *
+git commit -m "."
+git push
