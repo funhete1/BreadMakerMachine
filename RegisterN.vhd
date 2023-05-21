@@ -1,23 +1,51 @@
 library ieee;
-use iee.std_logic_1164.all;
-use iee.numeric_std.all;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity RegisterN is 
 	port(
 		Reset        : in std_logic;
-		P1/P2        : in std_logic;
-		Start/Stop   : in std_logic;
-		Time_adjust  : in std_logic;
+		Selector     : in std_logic; 
+		Start_Stop   : in std_logic; 
+		Time_adjust  : in unsigned;
 		clock        : in std_logic;
-		Time_extra   : out std_logic;
-		Time_cozer   : out std_logic;
-		Time_amassar : out std_logic;
-		Time_levedar : out std_logic;
-		Start/Stop   : out std_logic;
-		Mode         : out std_
+		Time_extra   : out unsigned;
+		Time_cozer   : out unsigned;
+		Time_amassar : out unsigned;
+		Time_levedar : out unsigned;
+		Start_Stop_o : out std_logic;
+		Mode1        : out std_logic;
+		Mode2        : out std_logic
 	);
 end RegisterN;
 
 architecture Behavioral of RegisterN is
-	if risinf_a
+begin
+	process(clock)
+	begin 
+		if rising_edge(clock) then 
+			if Reset = '0' then
+				if Selector = '0' then 
+					Mode1 <= '1';
+					Time_cozer <= 10; 
+					Time_amassar <= 10;
+					Time_levedar <= 4; 
+				elsif Selector = '1' then 
+					Mode2 <= '1'; 
+					Time_cozer <= 15; 
+					Time_amassar <= 8;
+					Time_levedar <= 10; 
+				end if;
+			elsif Reset = '1' then
+				Start_Stop_o <= '0';
+				Mode1 <= '0'; 
+				Mode2 <= '0';
+			end if;
+		end if;
+	end process;
+end Behavioral;
+
+
+			
+			
 	
