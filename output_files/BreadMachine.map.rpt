@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BreadMachine
-Fri May 26 16:14:01 2023
+Fri May 26 16:35:41 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,15 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +45,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri May 26 16:14:01 2023           ;
+; Analysis & Synthesis Status        ; Successful - Fri May 26 16:35:41 2023       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; BreadMachine                                ;
-; Top-level Entity Name              ; TimerFSm                                    ;
+; Top-level Entity Name              ; RegisterN                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 16                                          ;
+;     Total combinational functions  ; 5                                           ;
+;     Dedicated logic registers      ; 16                                          ;
+; Total registers                    ; 16                                          ;
+; Total pins                         ; 143                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -60,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; TimerFSm           ; BreadMachine       ;
+; Top-level entity name                                            ; RegisterN          ; BreadMachine       ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -149,11 +157,214 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; RegisterN.vhd                    ; yes             ; User VHDL File  ; C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 16          ;
+;                                             ;             ;
+; Total combinational functions               ; 5           ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 0           ;
+;     -- 3 input functions                    ; 0           ;
+;     -- <=2 input functions                  ; 5           ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 5           ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 16          ;
+;     -- Dedicated logic registers            ; 16          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 143         ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 16          ;
+; Total fan-out                               ; 206         ;
+; Average fan-out                             ; 0.67        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |RegisterN                 ; 5 (5)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 143  ; 0            ; |RegisterN          ; RegisterN   ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; Time_levedar[4]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[5]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[6]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[7]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[8]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[9]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[10]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[11]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[12]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[13]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[14]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[15]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[16]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[17]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[18]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[19]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[20]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[21]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[22]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[23]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[24]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[25]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[26]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[27]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[28]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[29]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_levedar[30]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[2]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[4]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[5]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[6]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[7]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[8]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[9]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[10]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[11]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[12]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[13]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[14]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[15]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[16]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[17]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[18]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[19]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[20]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[21]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[22]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[23]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[24]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[25]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[26]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[27]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[28]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[29]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_amassar[30]~reg0                  ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[4]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[5]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[6]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[7]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[8]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[9]~reg0                     ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[10]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[11]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[12]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[13]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[14]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[15]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[16]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[17]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[18]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[19]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[20]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[21]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[22]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[23]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[24]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[25]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[26]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[27]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[28]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[29]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Time_cozer[30]~reg0                    ; Stuck at GND due to stuck port data_in ;
+; Start_Stop_o~reg0                      ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 83 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 16    ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Time_cozer[0]~reg0                     ; 1       ;
+; Time_cozer[31]~reg0                    ; 1       ;
+; Time_amassar[0]~reg0                   ; 1       ;
+; Time_amassar[31]~reg0                  ; 1       ;
+; Time_levedar[0]~reg0                   ; 1       ;
+; Time_levedar[31]~reg0                  ; 1       ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 143                         ;
+; cycloneiii_ff         ; 16                          ;
+;     ENA               ; 14                          ;
+;     SCLR              ; 2                           ;
+; cycloneiii_lcell_comb ; 13                          ;
+;     normal            ; 13                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.63                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,22 +373,158 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri May 26 16:13:52 2023
+    Info: Processing started: Fri May 26 16:35:32 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BreadMakerMachine -c BreadMachine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file registern.vhd
     Info (12022): Found design unit 1: RegisterN-Behavioral File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 22
     Info (12023): Found entity 1: RegisterN File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 5
-Error (10500): VHDL syntax error at ClkDivider.vhd(6) near text ")";  expecting an identifier, or "constant", or "file", or "signal", or "variable" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/ClkDivider.vhd Line: 6
-Info (12021): Found 0 design units, including 0 entities, in source file clkdivider.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file clkdivider.vhd
+    Info (12022): Found design unit 1: ClkDivider-RTL File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/ClkDivider.vhd Line: 15
+    Info (12023): Found entity 1: ClkDivider File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/ClkDivider.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file timerfsm.vhd
     Info (12022): Found design unit 1: TimerFSM-Behavioral File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/TimerFSm.vhd Line: 14
     Info (12023): Found entity 1: TimerFSM File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/TimerFSm.vhd Line: 5
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4778 megabytes
-    Error: Processing ended: Fri May 26 16:14:01 2023
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:15
+Info (12127): Elaborating entity "RegisterN" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at RegisterN.vhd(12): used implicit default value for signal "Time_extra" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Time_extra[0]" is stuck at VCC File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[1]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[2]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[3]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[4]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[5]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[6]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[7]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[8]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[9]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[10]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[11]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[12]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[13]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[14]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[15]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[16]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[17]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[18]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[19]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[20]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[21]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[22]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[23]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[24]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[25]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[26]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[27]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[28]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[29]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[30]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_extra[31]" is stuck at VCC File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 12
+    Warning (13410): Pin "Time_cozer[4]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[5]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[6]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[7]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[8]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[9]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[10]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[11]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[12]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[13]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[14]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[15]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[16]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[17]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[18]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[19]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[20]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[21]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[22]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[23]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[24]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[25]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[26]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[27]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[28]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[29]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_cozer[30]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[2]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[4]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[5]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[6]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[7]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[8]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[9]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[10]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[11]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[12]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[13]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[14]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[15]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[16]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[17]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[18]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[19]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[20]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[21]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[22]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[23]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[24]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[25]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[26]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[27]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[28]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[29]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_amassar[30]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[4]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[5]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[6]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[7]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[8]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[9]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[10]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[11]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[12]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[13]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[14]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[15]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[16]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[17]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[18]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[19]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[20]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[21]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[22]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[23]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[24]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[25]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[26]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[27]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[28]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[29]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Time_levedar[30]" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 26
+    Warning (13410): Pin "Start_Stop_o" is stuck at GND File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Start_Stop" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 9
+    Warning (15610): No output dependent on input pin "Time_adjust[0]" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 10
+    Warning (15610): No output dependent on input pin "Time_adjust[1]" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 10
+    Warning (15610): No output dependent on input pin "Time_adjust[2]" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 10
+    Warning (15610): No output dependent on input pin "Time_adjust[3]" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 10
+    Warning (15610): No output dependent on input pin "Time_adjust[4]" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 10
+    Warning (15610): No output dependent on input pin "Time_adjust[5]" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 10
+    Warning (15610): No output dependent on input pin "Time_adjust[6]" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 10
+    Warning (15610): No output dependent on input pin "Time_adjust[7]" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 10
+Info (21057): Implemented 159 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 131 output pins
+    Info (21061): Implemented 16 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 128 warnings
+    Info: Peak virtual memory: 4790 megabytes
+    Info: Processing ended: Fri May 26 16:35:41 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:12
 
 

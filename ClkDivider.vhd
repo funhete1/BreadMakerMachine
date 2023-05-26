@@ -1,6 +1,32 @@
-library ieee;
-use ieee.std_logic_1164.all;
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
 
-entity ClkDivider is 
-	port(clk : in std_logic;
-			)
+entity ClkDivider is
+    generic (
+        divFactor : natural := 2
+    );
+    port (
+        clkIn  : in  std_logic;
+        clkOut : out std_logic
+    );
+end ClkDivider;
+
+architecture RTL of ClkDivider is
+    signal s_divCounter : natural;
+begin
+    process (clkIn)
+    begin
+        if (rising_edge(clkIn)) then
+            if (s_divCounter = divFactor - 1) then
+                clkOut <= '0';
+                s_divCounter <= 0;
+            else
+                if (s_divCounter = (divFactor / 2 - 1)) then
+                    clkOut <= '1';
+                end if;
+                s_divCounter <= s_divCounter + 1;
+            end if;
+        end if;
+    end process;
+end RTL;
