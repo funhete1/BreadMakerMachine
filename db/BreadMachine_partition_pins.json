@@ -1,0 +1,85 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Time_cozer[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_cozer[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_cozer[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_cozer[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_cozer[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_amassar[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_amassar[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_amassar[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_amassar[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_levedar[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_levedar[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_levedar[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_levedar[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Time_levedar[31]",
+					"strict" : false
+				},
+				{
+					"name" : "Mode1",
+					"strict" : false
+				},
+				{
+					"name" : "Mode2",
+					"strict" : false
+				},
+				{
+					"name" : "Selector",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
