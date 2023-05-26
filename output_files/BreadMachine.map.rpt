@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BreadMachine
-Sun May 21 17:10:00 2023
+Fri May 26 16:14:01 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -37,10 +37,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sun May 21 17:10:00 2023           ;
+; Analysis & Synthesis Status        ; Failed - Fri May 26 16:14:01 2023           ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; BreadMachine                                ;
-; Top-level Entity Name              ; RegisterN                                   ;
+; Top-level Entity Name              ; TimerFSm                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Total logic elements               ; N/A until Partition Merge                   ;
 ;     Total combinational functions  ; N/A until Partition Merge                   ;
@@ -60,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; RegisterN          ; BreadMachine       ;
+; Top-level entity name                                            ; TimerFSm           ; BreadMachine       ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -162,7 +162,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun May 21 17:09:52 2023
+    Info: Processing started: Fri May 26 16:13:52 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BreadMakerMachine -c BreadMachine
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -171,10 +171,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file registe
     Info (12023): Found entity 1: RegisterN File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/RegisterN.vhd Line: 5
 Error (10500): VHDL syntax error at ClkDivider.vhd(6) near text ")";  expecting an identifier, or "constant", or "file", or "signal", or "variable" File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/ClkDivider.vhd Line: 6
 Info (12021): Found 0 design units, including 0 entities, in source file clkdivider.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file timerfsm.vhd
+    Info (12022): Found design unit 1: TimerFSM-Behavioral File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/TimerFSm.vhd Line: 14
+    Info (12023): Found entity 1: TimerFSM File: C:/Users/vitoa/LSD/LSD_Projeto_final/BreadMakerMachine/TimerFSm.vhd Line: 5
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
     Error: Peak virtual memory: 4778 megabytes
-    Error: Processing ended: Sun May 21 17:10:00 2023
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:11
+    Error: Processing ended: Fri May 26 16:14:01 2023
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:15
 
 

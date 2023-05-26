@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Sun May 21 17:10:00 2023
+Analysis & Synthesis Status : Failed - Fri May 26 16:14:01 2023
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : BreadMachine
-Top-level Entity Name : RegisterN
+Top-level Entity Name : TimerFSm
 Family : Cyclone IV E
 Total logic elements : N/A until Partition Merge
     Total combinational functions : N/A until Partition Merge
